@@ -25,7 +25,6 @@ When returning an object, wrap with parentheses:
 
 () => ({ name: "Arun", age: 28 })
 
-
 Without parentheses → JS thinks {} is a function body.
 
 ## 2. Callback Functions (Very Important Concept)
@@ -35,7 +34,6 @@ A callback = function passed into another function.
 Example:
 
 setTimeout(() => console.log("Done"), 1000);
-
 
 Used everywhere:
 
@@ -57,7 +55,7 @@ Used to transform each value and return a new array.
 
 Example:
 let nums = [1,2,3];
-let doubled = nums.map(n => n * 2);  
+let doubled = nums.map(n => n \* 2);  
 // [2,4,6]
 
 Key Points:
@@ -90,6 +88,24 @@ Very useful for search, filtering UI lists
 
 Used to combine values into a single result.
 
+syntax:
+array.reduce((accumulator, currentValue) => {
+// return something
+}, initialValue);
+
+example:
+ar = [1, 2, 3, 4, 10, 11]
+return ar.reduce((acc, curr) => acc + curr, 0);
+this returns 1+2+3+4+10+11 as as a result
+
+reduce() automatically:
+
+-> Picks first element
+-> Passes it into curr
+-> Keeps track of result in acc
+-> Moves to next element
+-> Repeats
+
 Examples:
 
 Sum:
@@ -100,8 +116,8 @@ nums.reduce((acc, n) => n > acc ? n : acc);
 
 Counting objects:
 items.reduce((acc, item) => {
-  acc[item] = (acc[item] || 0) + 1;
-  return acc;
+acc[item] = (acc[item] || 0) + 1;
+return acc;
 }, {});
 
 ## 6. Array Method: find()
@@ -110,7 +126,6 @@ Returns first element matching condition.
 
 users.find(u => u.name === "Kumar");
 
-
 If nothing found → undefined.
 
 ## 7. Array Method: findIndex()
@@ -118,7 +133,6 @@ If nothing found → undefined.
 Returns index of the first matching element.
 
 nums.findIndex(n => n > 10);
-
 
 If nothing found → -1.
 
@@ -131,7 +145,6 @@ Examples:
 nums.some(n => n > 10);
 users.some(u => u.role === "admin");
 
-
 Real-world: password weakness checks.
 
 ## 9. Array Method: every()
@@ -139,7 +152,6 @@ Real-world: password weakness checks.
 Returns true ONLY IF all items match.
 
 nums.every(n => n > 0);
-
 
 Used for form validation:
 
@@ -150,7 +162,6 @@ fields.every(f => f.trim() !== "");
 Checks if an array contains a value.
 
 [1,2,3].includes(2); // true
-
 
 But VERY IMPORTANT:
 
@@ -166,7 +177,6 @@ Used for looping but does not return anything.
 
 nums.forEach(n => console.log(n));
 
-
 Used for logging, updating totals, debugging.
 
 ## 12. Object Reference Basics
@@ -174,21 +184,19 @@ Used for logging, updating totals, debugging.
 Objects are stored by memory reference.
 
 let a = {x:10};
-let b = a;   // b points to SAME object
-
+let b = a; // b points to SAME object
 
 Comparing objects checks reference, not content.
 
 This explains why includes() fails for objects.
 
 ## 13. Conditional (Ternary) Operator
-condition ? valueIfTrue : valueIfFalse
 
+condition ? valueIfTrue : valueIfFalse
 
 Example:
 
 age >= 18 ? "Adult" : "Minor";
-
 
 Used in:
 
@@ -204,15 +212,14 @@ Ascending:
 
 arr.sort((a,b) => a - b);
 
-
 Descending:
 
 arr.sort((a,b) => b - a);
 
-
 Full advanced sorting will be taught later.
 
 ## End of Week 1 Summary
+
 ✔ Arrow functions
 ✔ Callback functions
 ✔ map / filter / reduce
